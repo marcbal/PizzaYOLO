@@ -4,11 +4,11 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 
-import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateVars;
+import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateBean;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core.AbstractController;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core.RequestApplication;
 
-public class IndexController extends AbstractController {
+public class ControllerIndex extends AbstractController {
 
 
 
@@ -30,7 +30,7 @@ public class IndexController extends AbstractController {
 
 	public void defaultAction(RequestApplication app) throws ServletException, IOException {
 		setContentTypeHTML(app);
-		setTemplateVars(new TemplateVars("Bienvenue"), app);
+		setTemplateBean(new TemplateBean("Bienvenue"), app);
 		
 
 		runVueJSP("template_head.jsp", app);

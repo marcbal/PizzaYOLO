@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 
-import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateVars;
+import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateBean;
 
 public abstract class AbstractController {
 	
@@ -31,7 +31,7 @@ public abstract class AbstractController {
 		app.response.setContentType("text/html;charset=UTF-8");
 	}
 	
-	public void setTemplateVars(TemplateVars tplVars, RequestApplication app) {
+	public void setTemplateBean(TemplateBean tplVars, RequestApplication app) {
 		app.request.setAttribute("template", tplVars);
 	}
 	

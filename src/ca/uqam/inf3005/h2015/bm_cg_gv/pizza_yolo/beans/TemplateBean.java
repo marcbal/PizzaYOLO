@@ -5,23 +5,23 @@ package ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans;
  * qui sont communes à toutes les pages.
  *
  */
-public class TemplateVars {
+public class TemplateBean {
 	
 	private String headTitle;
 	
 	private String pageTitle;
 	
 	
-	public TemplateVars() {
+	public TemplateBean() {
 		this("Default title");
 	}
 	
-	public TemplateVars(String headT, String pageT) {
+	public TemplateBean(String headT, String pageT) {
 		setHeadTitle(headT);
 		setPageTitle(pageT);
 	}
 	
-	public TemplateVars(String t) {
+	public TemplateBean(String t) {
 		setTitles(t);
 	}
 	

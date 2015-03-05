@@ -6,7 +6,7 @@ package ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core;
 import java.util.HashMap;
 import java.util.Map;
 
-import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.controllers.IndexController;
+import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.controllers.ControllerIndex;
 
 /**
  * Classe gérant les Controleurs. Le système de réflexion de java étant plus compliqués,
@@ -39,10 +39,10 @@ public class ControllerManager {
 	public final String defaultController;
 	
 	
-	public ControllerManager() {
+	private ControllerManager() {
 		controllers = new HashMap<String, AbstractController>();
 		
-		controllers.put("index", new IndexController());
+		controllers.put("index", new ControllerIndex());
 		
 		defaultController = "index";
 	}
