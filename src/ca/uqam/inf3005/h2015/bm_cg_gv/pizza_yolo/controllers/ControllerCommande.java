@@ -39,7 +39,7 @@ public class ControllerCommande extends AbstractController {
 	 */
 	public void renseignements(RequestApplication app) throws ServletException, IOException {
 		setContentTypeHTML(app);
-		setTemplateBean(new TemplateBean("Bienvenue"), app);
+		setTemplateBean(new TemplateBean("Détails de la commande"), app);
 		
 
 		runVueJSP("template_head.jsp", app);
@@ -55,7 +55,7 @@ public class ControllerCommande extends AbstractController {
 	 */
 	public void confirmation(RequestApplication app) throws ServletException, IOException {
 		setContentTypeHTML(app);
-		setTemplateBean(new TemplateBean("Bienvenue"), app);
+		setTemplateBean(new TemplateBean("Confirmation"), app);
 		
 
 		runVueJSP("template_head.jsp", app);
@@ -69,7 +69,7 @@ public class ControllerCommande extends AbstractController {
 	 */
 	public void liste(RequestApplication app) throws ServletException, IOException {
 		setContentTypeHTML(app);
-		setTemplateBean(new TemplateBean("Bienvenue"), app);
+		setTemplateBean(new TemplateBean("Liste des commandes"), app);
 		
 
 		runVueJSP("template_head.jsp", app);

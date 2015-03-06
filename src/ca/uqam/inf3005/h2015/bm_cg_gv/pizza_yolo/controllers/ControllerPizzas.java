@@ -35,7 +35,7 @@ public class ControllerPizzas extends AbstractController {
 	 */
 	public void liste(RequestApplication app) throws ServletException, IOException {
 		setContentTypeHTML(app);
-		setTemplateBean(new TemplateBean("Bienvenue"), app);
+		setTemplateBean(new TemplateBean("Liste des pizzas"), app);
 		
 
 		runVueJSP("template_head.jsp", app);
@@ -53,7 +53,7 @@ public class ControllerPizzas extends AbstractController {
 	 */
 	public void details(RequestApplication app) throws ServletException, IOException {
 		setContentTypeHTML(app);
-		setTemplateBean(new TemplateBean("Bienvenue"), app);
+		setTemplateBean(new TemplateBean("Commander une pizza"), app);
 		
 
 		runVueJSP("template_head.jsp", app);
