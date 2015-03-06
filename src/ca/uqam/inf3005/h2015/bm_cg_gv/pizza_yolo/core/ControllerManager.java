@@ -6,12 +6,13 @@ package ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core;
 import java.util.HashMap;
 import java.util.Map;
 
-import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.controllers.ControllerIndex;
+import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.controllers.ControllerCommande;
+import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.controllers.ControllerPizzas;
 
 /**
  * Classe gérant les Controleurs. Le système de réflexion de java étant plus compliqués,
  * nous préférons utiliser une classe qui recense tout les contrôleurs plutot que
- * de les appeler via la réfexion Java.
+ * de les appeler via la réfexion Java. (L'équivalant PHP de ce MVC utilise la réflexion)
  * 
  */
 public class ControllerManager {
@@ -41,10 +42,11 @@ public class ControllerManager {
 	
 	private ControllerManager() {
 		controllers = new HashMap<String, AbstractController>();
+
+		controllers.put("pizzas", new ControllerPizzas());
+		controllers.put("commande", new ControllerCommande());
 		
-		controllers.put("index", new ControllerIndex());
-		
-		defaultController = "index";
+		defaultController = "pizzas";
 	}
 	
 	
