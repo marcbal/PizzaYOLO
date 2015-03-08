@@ -31,6 +31,17 @@ public class Pizza {
 	public List<String> getIngredients() {
 		return ingredients;
 	}
+	
+	
+	public String getIngredientUserFriendly() {
+		StringBuilder sb = new StringBuilder();
+		
+		for (String ing : ingredients) {
+			sb.append(ing).append(", ");
+		}
+		
+		return sb.toString().substring(0, sb.length()-2);
+	}
 
 	public void setIngredients(List<String> ingredients) {
 		this.ingredients = ingredients;
@@ -75,6 +86,6 @@ public class Pizza {
 
 
 	public enum Taille {
-		PETIT, MOYEN, GRAND
+		PETIT, MOYEN, GRAND, XXL
 	}
 }

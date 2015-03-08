@@ -28,9 +28,11 @@ public class TableManager {
 	
 
 	
+	@SuppressWarnings("rawtypes")
 	private Map<String, AbstractTable> tables;
 	
 	
+	@SuppressWarnings("rawtypes")
 	private TableManager() {
 		tables = new HashMap<String, AbstractTable>();
 		
@@ -38,13 +40,14 @@ public class TableManager {
 		 * Toutes les collections de données persistances sont rangées dans des instance
 		 * de sous-classes de AbstractTable
 		 */
-		tables.put("pizzax", new PizzaTable());
+		tables.put("pizza", new PizzaTable());
 	}
 	
 	
 	
 
 	
+	@SuppressWarnings("rawtypes")
 	public AbstractTable getTable(String name) {
 		return tables.get(name);
 	}

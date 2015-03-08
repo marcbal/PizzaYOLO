@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateBean;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core.AbstractController;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core.RequestApplication;
+import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.model.TableManager;
 
 public class ControllerPizzas extends AbstractController {
 
@@ -37,9 +38,10 @@ public class ControllerPizzas extends AbstractController {
 		setContentTypeHTML(app);
 		setTemplateBean(new TemplateBean("Liste des pizzas"), app);
 		
+		app.request.setAttribute("pizzas", TableManager.getInstance().getTable("pizza").getAll());
 
 		runVueJSP("template_head.jsp", app);
-		runVueJSP("test_test.jsp", app);
+		runVueJSP("pizzas_liste.jsp", app);
 		runVueJSP("template_foot.jsp", app);
 	}
 
