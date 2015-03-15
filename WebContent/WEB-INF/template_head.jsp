@@ -5,8 +5,8 @@
 		<meta charset="utf-8" />
 		<title>${template.headTitle} - PizzaYOLO</title>
 		<link rel="stylesheet" href="design/design.css">
+		<link rel="stylesheet" href="design/bootstrap.css">
 		<!-- <link rel="icon" type="image/png" href="assets/design/icone.png"/> -->
-		<!-- <link rel="stylesheet" href="assets/design/commun.css" media="all"/> -->
 	</head>
 	<body>
 		<div class="body">

@@ -16,10 +16,10 @@ for (Entry<Integer, Pizza> pz : pizzas.entrySet()) {
 		<h3><%= pizza.getNom().toUpperCase() %></h3>
 		
 		<div class="tailles">
-			<a href="?pizzas/details/<%= index %>/PETIT" class="btn">Petite (25ø) - <%= pizza.getTaillePrix().get(Taille.PETIT) %> $</a><br/>
-			<a href="?pizzas/details/<%= index %>/MOYEN" class="btn2">Normale (30ø) - <%= pizza.getTaillePrix().get(Taille.MOYEN) %> $</a><br/>
-			<a href="?pizzas/details/<%= index %>/GRAND" class="btn3">Grande (35ø) - <%= pizza.getTaillePrix().get(Taille.GRAND) %> $</a><br/>
-			<a href="?pizzas/details/<%= index %>/XXL" class="btn4">XXL (45ø) - <%= pizza.getTaillePrix().get(Taille.XXL) %> $</a><br/>
+			<form method="POST" action="?pizzas/details/<%= index %>/PETIT"><input type="submit"  class="btn" value="Petite (25ø) - <%= pizza.getTaillePrix().get(Taille.PETIT) %> $"/></form>
+			<form method="POST" action="?pizzas/details/<%= index %>/MOYEN"><input type="submit"  class="btn2" value="Normale (30ø) - <%= pizza.getTaillePrix().get(Taille.MOYEN) %> $"/></form>
+			<form method="POST" action="?pizzas/details/<%= index %>/GRAND"><input type="submit"  class="btn3" value="Grande (35ø) - <%= pizza.getTaillePrix().get(Taille.GRAND) %> $"/></form>
+			<form method="POST" action="?pizzas/details/<%= index %>/XXL"><input type="submit"  class="btn4" value="XXL (45ø) - <%= pizza.getTaillePrix().get(Taille.XXL) %> $"/></form>
 		</div>
 		
 		<div class="ingredients">

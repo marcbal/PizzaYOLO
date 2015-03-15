@@ -63,16 +63,20 @@ public class RequestApplication {
 		else
 			urlController = ControllerManager.getInstance().defaultController;
 		
-		if (values.length >= 2)
-			urlAction = values[1];
-		else
-			urlAction = ""; // appellera automatiquement l'action par défaut défini dans le contrôleur
-		
 		if (values.length >= 2) {
+			urlAction = values[1];
 			urlParams = new String[values.length-2];
+			
+			for (int i=2;i<values.length; i++) {
+				urlParams[i-2] = values[i];
+			}
+			
 		}
-		else
+		else {
+			urlAction = ""; // appellera automatiquement l'action par défaut définie dans le contrôleur
 			urlParams = new String[0];
+			
+		}
 		
 		
 		
