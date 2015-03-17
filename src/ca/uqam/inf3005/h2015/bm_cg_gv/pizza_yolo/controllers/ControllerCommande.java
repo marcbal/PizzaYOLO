@@ -71,7 +71,7 @@ public class ControllerCommande extends AbstractController {
 		if (!app.isPost)
 			throw new ServletException("Veuillez resélectionner une pizza à la page d'accueil");
 		
-		Pizza p = (Pizza) TableManager.getInstance().getTable("pizza").get((int) app.session.getAttribute("selectedPizza"));
+		Pizza p = (Pizza) TableManager.getInstance().getTable("pizza").get((Integer) app.session.getAttribute("selectedPizza"));
 		
 		List<String> ingredients = p.getIngredients();
 		
@@ -181,7 +181,7 @@ public class ControllerCommande extends AbstractController {
 		}
 		
 		
-		int idPizzaInt = (int) idPizza;
+		int idPizzaInt = (Integer) idPizza;
 		String taillePizzaStr = (String) taillePizza;
 		@SuppressWarnings("unchecked")
 		List<String> selectedIngredientsList = (List<String>) selectedIngredients;
