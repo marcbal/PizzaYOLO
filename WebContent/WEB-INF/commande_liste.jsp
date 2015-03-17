@@ -2,7 +2,8 @@
 
 <table>
 	<tr>
-		<th>Nom / age / adresse</th>
+		<th>Date / Heure</th>
+		<th>Nom / Age / Adresse</th>
 		<th>Téléphone</th>
 		<th>Pizza / Taille / Prix</th>
 		<th>Ingrédients sélectionnés</th>

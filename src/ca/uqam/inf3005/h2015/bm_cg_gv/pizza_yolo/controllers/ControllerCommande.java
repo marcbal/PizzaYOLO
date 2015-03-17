@@ -6,13 +6,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
-
-import com.sun.xml.internal.ws.util.StringUtils;
 
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateBean;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core.AbstractController;
@@ -81,8 +83,6 @@ public class ControllerCommande extends AbstractController {
 			
 			String val = app.request.getParameter(String.valueOf(i));
 			
-			System.out.println(val+" ");
-			
 			if ("on".equalsIgnoreCase(val)) {
 				selectedIngredients.add(ingredients.get(i));
 			}
@@ -140,11 +140,11 @@ public class ControllerCommande extends AbstractController {
 		if (nom.isEmpty() || prenom.isEmpty() || age.isEmpty() || tel.isEmpty() || adresse.isEmpty())
 			throw new ServletException("Un des champs du formulaire est vide");
 		
-		// nom, prenom et adresse OK
-		int ageInt = 0;
+		// ici : nom, prenom et adresse OK
+		
 		
 		try {
-			ageInt = Integer.parseInt(age);
+			Integer.parseInt(age);
 		} catch(NumberFormatException e) {
 			throw new ServletException("L'age indiqué n'est pas valide. Ça doit être un nombre");
 		}
@@ -183,6 +183,7 @@ public class ControllerCommande extends AbstractController {
 		
 		int idPizzaInt = (int) idPizza;
 		String taillePizzaStr = (String) taillePizza;
+		@SuppressWarnings("unchecked")
 		List<String> selectedIngredientsList = (List<String>) selectedIngredients;
 		
 		
@@ -284,11 +285,12 @@ public class ControllerCommande extends AbstractController {
 				 */
 				
 				tableLines.append("<tr>"
+						+ "<td>"+SimpleDateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT, Locale.CANADA_FRENCH).format(new Date(time))+"</td>"
 						+ "<td>"+nom+" "+prenom+" ("+age+" ans)"
 						+ addresseStrB + "</td>"
 						+ "<td>"+telephone+"</td>"
 						+ "<td>"+pizza.getNom()+"<br/>Taille : "+tailePizza.name()+"<br/>Prix : "+prix+"</td>"
-						+ "<td>"+ingredients.toString().replaceAll("[\\[\\]]", "")+"</td>"
+						+ "<td>"+ingredients.toString().replaceAll("[\\[\\]]", "").replaceAll(", ", "<br/>")+"</td>"
 						+ "</tr>");
 				
 				
