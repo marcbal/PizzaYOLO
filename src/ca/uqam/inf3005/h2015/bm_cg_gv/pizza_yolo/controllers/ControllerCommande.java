@@ -3,14 +3,16 @@ package ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.controllers;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
+
+import com.sun.xml.internal.ws.util.StringUtils;
 
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.beans.TemplateBean;
 import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.core.AbstractController;
@@ -209,8 +211,6 @@ public class ControllerCommande extends AbstractController {
 		bw.close();
 		
 		
-		System.out.println(commandFile.getAbsolutePath());
-		
 		
 		
 		
@@ -229,7 +229,84 @@ public class ControllerCommande extends AbstractController {
 		setContentTypeHTML(app);
 		setTemplateBean(new TemplateBean("Liste des commandes"), app);
 		
-
+		
+		File[] fichiers = dossier.listFiles();
+		
+		StringBuilder tableLines = new StringBuilder();
+		
+		for (File fichier : fichiers) {
+			
+			if (fichier.isDirectory())
+				continue;
+			if (!fichier.getName().matches("[0-9]+"))
+				continue;
+			
+			try {
+				
+				long time = Long.valueOf(fichier.getName());
+				
+				BufferedReader br = new BufferedReader(new FileReader(fichier));
+				
+				// première ligne : id Pizza + taille Pizza
+				String line = br.readLine();
+				String[] spLine = line.split(";");
+				Pizza pizza = (Pizza) TableManager.getInstance().getTable("pizza").get(Integer.parseInt(spLine[0]));
+				Taille tailePizza = Taille.valueOf(spLine[1]);
+				double prix = pizza.getTaillePrix().get(tailePizza);
+				
+				// deuxième ligne : la liste des ingrédients
+				line = br.readLine();
+				spLine = line.split(";");
+				List<String> ingredients = Arrays.asList(spLine);
+				
+				// lignes 3, 4, 5 et 6 : nom, prénom, age et téléphone
+				String nom = br.readLine();
+				String prenom = br.readLine();
+				String age = br.readLine();
+				String telephone = br.readLine();
+				
+				List<String> addresse = new ArrayList<String>();
+				
+				while (br.ready())
+					addresse.add(br.readLine());
+				
+				StringBuilder addresseStrB = new StringBuilder();
+				
+				for (String addrLine : addresse) {
+					addresseStrB.append("<br/>"+addrLine);
+				}
+				
+				br.close();
+				
+				/* je ne m'embête pas à transferer toutes les données via request.setAttribute() individuellement
+				 * alors je contruit un peu le code HTML ici (l'idéal aurait été de faire une JavaBean "Commande",
+				 * et de construire la structure HTML dans la vue commande_liste.jsp)
+				 */
+				
+				tableLines.append("<tr>"
+						+ "<td>"+nom+" "+prenom+" ("+age+" ans)"
+						+ addresseStrB + "</td>"
+						+ "<td>"+telephone+"</td>"
+						+ "<td>"+pizza.getNom()+"<br/>Taille : "+tailePizza.name()+"<br/>Prix : "+prix+"</td>"
+						+ "<td>"+ingredients.toString().replaceAll("[\\[\\]]", "")+"</td>"
+						+ "</tr>");
+				
+				
+				
+				
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		app.request.setAttribute("lines", tableLines);
+		
+		
+		
+		
+		
 		runVueJSP("template_head.jsp", app);
 		runVueJSP("commande_liste.jsp", app);
 		runVueJSP("template_foot.jsp", app);
