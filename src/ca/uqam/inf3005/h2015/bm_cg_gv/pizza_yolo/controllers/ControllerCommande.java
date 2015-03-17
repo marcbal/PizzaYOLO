@@ -26,11 +26,8 @@ import ca.uqam.inf3005.h2015.bm_cg_gv.pizza_yolo.model.element.Pizza.Taille;
 public class ControllerCommande extends AbstractController {
 
 	
-	private File dossier = new File("./commandes");
+	private File dossier = new File("/home/dj591142/public_html/java/WEB-INF/commandes");
 	
-	public ControllerCommande() {
-		dossier.mkdir();
-	}
 	
 	
 	
@@ -187,7 +184,7 @@ public class ControllerCommande extends AbstractController {
 		List<String> selectedIngredientsList = (List<String>) selectedIngredients;
 		
 		
-		
+		dossier.mkdirs();
 		
 		File commandFile = new File(dossier, ""+System.currentTimeMillis());
 		if (commandFile.exists())
@@ -230,7 +227,8 @@ public class ControllerCommande extends AbstractController {
 		setContentTypeHTML(app);
 		setTemplateBean(new TemplateBean("Liste des commandes"), app);
 		
-		
+
+		dossier.mkdirs();
 		File[] fichiers = dossier.listFiles();
 		
 		StringBuilder tableLines = new StringBuilder();
