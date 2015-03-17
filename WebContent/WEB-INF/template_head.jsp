@@ -5,20 +5,19 @@
 		<meta charset="utf-8" />
 		<title>${template.headTitle} - PizzaYOLO</title>
 		<link rel="stylesheet" href="design/design.css">
-		<link rel="stylesheet" href="design/bootstrap.css">
 		<!-- <link rel="icon" type="image/png" href="assets/design/icone.png"/> -->
 	</head>
 	<body>
-		<div class="body">
+		<div id="body">
 			<header>
-				<img src="design/logo.png"/>
+				<a href="?"><img src="design/logo.png"/></a>
 				<h1>LEADER <span class="barre">MONDIAL</span> DU MARCHE RUSSE !</h1>
 			</header>
 			
-			<img src="design/border.png" height="4%" width="100%"/>
+			<p><img src="design/border.png" style="width: 100%;"/></p>
 			
 			
-			<div class="main">
+			<div id="content">
 				<h2>${template.pageTitle}</h2>
 			
 			

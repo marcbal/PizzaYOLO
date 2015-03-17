@@ -1,11 +1,11 @@
 	
 			</div>
 			
-			<div class="footer">
+			<footer>
 			
-			Valentin G., Marc B. & Gaëtan C., tous droits réservés.
+			Valentin Gottrand, Marc Baloup & Gaëtan Cathelain, tous droits réservés.
 			
-			</div>
+			</footer>
 		</div>
 	</body>
 </html>

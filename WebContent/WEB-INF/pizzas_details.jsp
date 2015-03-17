@@ -21,19 +21,19 @@ List<String> ingredients = pizza.getIngredients();
 			<%
 				if (taille == Taille.PETIT) {
 					%>
-						<input type="submit"  class="btn" value="Petite (25ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
+						<input type="submit"  class="bouton bouton_petit" value="Petite (25ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
 					<%
 				} else if (taille == Taille.MOYEN) {
 					%>
-						<input type="submit"  class="btn2" value="Normale (30ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
+						<input type="submit"  class="bouton bouton_moyen" value="Normale (30ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
 					<%
 				} else if (taille == Taille.GRAND) {
 					%>
-						<input type="submit"  class="btn3" value="Grande (35ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
+						<input type="submit"  class="bouton bouton_grand" value="Grande (35ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
 					<%
 				} else if (taille == Taille.XXL) {
 					%>
-						<input type="submit"  class="btn4" value="XXL (45ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
+						<input type="submit"  class="bouton bouton_xxl" value="XXL (45ø) - <%= pizza.getTaillePrix().get(taille) %> $"/>
 					<%
 				}
 			%>

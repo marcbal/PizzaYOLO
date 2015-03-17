@@ -1,175 +1,27 @@
-.pizza
+
+body
 {
-	border:2px solid red;
-	padding : 10px;
+	background-image:url("pizzaw.jpg");
+	background-attachment:fixed;
+	background-position:center;
 }
 
-.photo_pizza
+
+#body /* div contenu directement dans le body */
 {
-	position: relative;
-	margin-left: 10px;
-	margin-top : 10px;
-	margin-bottom : 10px;
-	padding : 4px;
-	height : 200px;
-	width : 200px;
-	border:2px solid green;
-}
-
-.info_pizza
-{
-	position: relative;
-	margin-left: 250px;
-	margin-top : -220px;
-	margin-bottom : 10px;
-	padding : 4px;
-	height : 200px;
-	border:2px solid green;
-}
-
-h3
-{
-	position:float;
-	text-align:center;
-	font-family : "Arial", Serif;
-	text-decoration : underline;
-}
-
-.tailles
-{
-	position : relative;
-	width : 48%;
-	height : 130px;
-}
-
-.btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 13;
-  -moz-border-radius: 13;
-  border-radius: 13px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 100%;
-  padding: auto;
-  text-decoration: none;
-  width : 100%;
-  height : 100%;
-}
-
-.btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}
-
-.btn2 {
-  background: #34d93f;
-  background-image: -webkit-linear-gradient(top, #34d93f, #2bb863);
-  background-image: -moz-linear-gradient(top, #34d93f, #2bb863);
-  background-image: -ms-linear-gradient(top, #34d93f, #2bb863);
-  background-image: -o-linear-gradient(top, #34d93f, #2bb863);
-  background-image: linear-gradient(to bottom, #34d93f, #2bb863);
-  -webkit-border-radius: 13;
-  -moz-border-radius: 13;
-  border-radius: 13px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 100%;
-  padding: auto;
-  text-decoration: none;
-  width : 100%;
-  height : 100%;
-}
-
-.btn2:hover {
-  background: #71fa7a;
-  background-image: -webkit-linear-gradient(top, #71fa7a, #53e057);
-  background-image: -moz-linear-gradient(top, #71fa7a, #53e057);
-  background-image: -ms-linear-gradient(top, #71fa7a, #53e057);
-  background-image: -o-linear-gradient(top, #71fa7a, #53e057);
-  background-image: linear-gradient(to bottom, #71fa7a, #53e057);
-  text-decoration: none;
-}
-
-.btn3 {
-  background: #f7ff00;
-  background-image: -webkit-linear-gradient(top, #f7ff00, #dec104);
-  background-image: -moz-linear-gradient(top, #f7ff00, #dec104);
-  background-image: -ms-linear-gradient(top, #f7ff00, #dec104);
-  background-image: -o-linear-gradient(top, #f7ff00, #dec104);
-  background-image: linear-gradient(to bottom, #f7ff00, #dec104);
-  -webkit-border-radius: 13;
-  -moz-border-radius: 13;
-  border-radius: 13px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 100%;
-  padding: auto;
-  text-decoration: none;
-   width : 100%;
-  height : 100%;
-}
-
-.btn3:hover {
-  background: #ebeb63;
-  background-image: -webkit-linear-gradient(top, #ebeb63, #cfd437);
-  background-image: -moz-linear-gradient(top, #ebeb63, #cfd437);
-  background-image: -ms-linear-gradient(top, #ebeb63, #cfd437);
-  background-image: -o-linear-gradient(top, #ebeb63, #cfd437);
-  background-image: linear-gradient(to bottom, #ebeb63, #cfd437);
-  text-decoration: none;
-}
-
-.btn4 {
-  background: #ff6600;
-  background-image: -webkit-linear-gradient(top, #ff6600, #de1304);
-  background-image: -moz-linear-gradient(top, #ff6600, #de1304);
-  background-image: -ms-linear-gradient(top, #ff6600, #de1304);
-  background-image: -o-linear-gradient(top, #ff6600, #de1304);
-  background-image: linear-gradient(to bottom, #ff6600, #de1304);
-  -webkit-border-radius: 13;
-  -moz-border-radius: 13;
-  border-radius: 13px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 100%;
-  padding: auto;
-  text-decoration: none;
-  width:100%;
-  height:100%;
-}
-
-.btn4:hover {
-  background: #eb9f65;
-  background-image: -webkit-linear-gradient(top, #eb9f65, #d45637);
-  background-image: -moz-linear-gradient(top, #eb9f65, #d45637);
-  background-image: -ms-linear-gradient(top, #eb9f65, #d45637);
-  background-image: -o-linear-gradient(top, #eb9f65, #d45637);
-  background-image: linear-gradient(to bottom, #eb9f65, #d45637);
-  text-decoration: none;
-}
-
-.ingredients
-{
-	position : relative;
-	border : 2px dotted blue;
-	width : 48%;
-	margin-left : +50%;
-	margin-top : -133px;
-	height : 130px;
+	background-color : #FF9933;
+	border-radius: 5px;
+	width : 800px;
+	margin : auto;
 	
-	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
 	
-	box-sizing: border-box;
+}
+
+
+header
+{
+	height : 190px;
 }
 
 
@@ -184,42 +36,217 @@ h1
 	
 }
 
-header
+
+
+h3
 {
-	height : 190px;
+	text-align: center;
+	text-decoration : underline;
+	text-transform: uppercase;
 }
+
+
+
+
+#content
+{
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+	Page liste des pizzas
+*/
+
+.pizza
+{
+	background-color: #FFB56A;
+	border-radius: 3px;
+	width: 780px;
+	height: 220px;
+	margin-bottom: 10px;
+}
+
+.photo_pizza
+{
+	position: relative;
+	left: 10px;
+	top : 10px;
+	height : 200px;
+	width : 200px;
+	float: left;
+}
+
+.info_pizza
+{
+	position: relative;
+	top: 20px;
+	margin-left: 230px;
+	margin-right: 20px;
+	height : 180px;
+}
+
+
+
+
+div.tailles
+{
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width : 48%;
+	height : 140px;
+}
+
+
+.ingredients
+{
+	position : absolute;
+	top: 40px;
+	right: 0;
+	width : 48%;
+	height : 140px;
+	
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: #FFD5AA;
+}
+form.ingredients
+{
+	line-height: 100%;
+	overflow-y: auto;
+	padding-top: 3px;
+}
+form.ingredients p
+{
+	margin: 0;
+}
+
+.bouton
+{
+  border-radius: 10px;
+  border-width: 0;
+  color: #ffffff;
+  padding: auto;
+  text-decoration: none;
+  width : 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.bouton:hover
+{
+	text-decoration: none;
+}
+
+.bouton_petit {
+  background: #3498db;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  
+}
+
+.bouton_petit:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  
+}
+
+.bouton_moyen {
+  background: #34d93f;
+  background-image: linear-gradient(to bottom, #34d93f, #2bb863);
+  
+}
+
+.bouton_moyen:hover {
+  background: #71fa7a;
+  background-image: linear-gradient(to bottom, #71fa7a, #53e057);
+  
+}
+
+.bouton_grand {
+  background: #f7ff00;
+  background-image: linear-gradient(to bottom, #f7ff00, #dec104);
+  
+}
+
+.bouton_grand:hover {
+  background: #ebeb63;
+  background-image: linear-gradient(to bottom, #ebeb63, #cfd437);
+  
+}
+
+.bouton_xxl {
+  background: #ff6600;
+  background-image: linear-gradient(to bottom, #ff6600, #de1304);
+  
+}
+
+.bouton_xxl:hover {
+  background: #eb9f65;
+  background-image: linear-gradient(to bottom, #eb9f65, #d45637);
+  
+}
+
+
+
+
+form#form_renseignements label
+{
+	float: left;
+	width: 150px;
+}
+
+
+
+
 
 .barre
 {
 	text-decoration : line-through;
 }
 
-.body
+
+
+table
 {
-	background-color : #FF9933;
-	width : 800px;
-	margin : auto;
-	
+	border-collapse: separate;
+	border-spacing: 5px;
 }
 
-body
-{
-	background-image:url("pizzaw.jpg");
-	background-attachment:fixed;
-	background-position:center;
+td, th {
+	background-color: #FFB56A;
+	border-radius: 3px;
+	padding: 3px;
 }
 
-form
-{
 
-	padding: 0 ;
-	margin:0;
-	height:25%;
+
+
+/* Extrait de Bootstrap */
+.form-group {
+  margin-bottom: 15px;
 }
 
-table, th, td
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+
+
+
+
+footer
 {
-	width:12,85%;
-	
-	border:1px solid black;
+	border-top: solid 5px black;
+	padding: 5px;
+	text-align: center;
 }

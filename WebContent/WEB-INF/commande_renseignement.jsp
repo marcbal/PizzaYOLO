@@ -1,5 +1,5 @@
-<div class="formulaire">
-	<form method="POST" action="?commande/confirmation">
+
+	<form id="form_renseignements" method="POST" action="?commande/confirmation">
 		
 		<div class="form-group">
 		<label for="nom">Nom : </label>
@@ -30,4 +30,3 @@
 	
 	</form>
 
-</div>
